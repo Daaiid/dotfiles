@@ -1,0 +1,40 @@
+# Assumptions: nvim and delta are installed
+
+[user]
+	email = said.aroua@bluewin.ch
+	name = Said Aroua
+
+[core]
+	autocrlf = input
+	editor = nvim
+	pager = delta
+
+[push]
+	default = simple
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+
+[column]
+	ui = auto
+
+[init]
+	defaultBranch = main
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+	tool = nvimdiff
+
+[interactive]
+	diffFilter = delta --color-only
+
+[help]
+	autocorrect = prompt
+
+[alias]
+	s = status
+
