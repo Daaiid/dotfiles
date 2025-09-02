@@ -19,3 +19,5 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# Automatically use cd if the given command is a valid path
+shopt -s autocd
