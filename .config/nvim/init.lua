@@ -147,6 +147,14 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+local js_ts_formatters = function(bufnr)
+	if require("conform").get_formatter_info("biome", bufnr).available then
+		return { "biome" }
+	else
+		return { "prettierd", "prettier", stop_after_first = true }
+	end
+end
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -685,9 +693,9 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
-				typescript = { "prettierd", "prettier", stop_after_first = true },
-				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+				javascript = js_ts_formatters,
+				typescript = js_ts_formatters,
+				typescriptreact = js_ts_formatters,
 			},
 		},
 	},
