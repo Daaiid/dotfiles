@@ -586,6 +586,7 @@ require("lazy").setup({
 				-- clangd = {},
 				-- gopls = {},
 				pyright = {
+					offset_encoding = "utf-8",
 					settings = {
 						pyright = {
 							-- Using Ruff's import organizer
