@@ -147,15 +147,6 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
-local js_ts_formatters = function()
-	-- If we find a biome.json config in project root, assume biome
-	if vim.uv.fs_stat("./biome.json") then
-		return { "biome" }
-	else
-		return { "prettierd", "prettier", stop_after_first = true }
-	end
-end
-
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
@@ -611,7 +602,6 @@ require("lazy").setup({
 						},
 					},
 				},
-				biome = {},
 
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 
