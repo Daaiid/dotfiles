@@ -686,9 +686,6 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-				javascript = js_ts_formatters,
-				typescript = js_ts_formatters,
-				typescriptreact = js_ts_formatters,
 			},
 		},
 	},
